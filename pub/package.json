@@ -1,0 +1,25 @@
+{
+  "author": "Corno",
+  "bugs": {
+    "url": "https://github.com/corno/pareto/issues"
+  },
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/corno/pareto#readme",
+  "license": "ISC",
+  "main": "./dist",
+  "types": "./dist",
+  "name": "res-pareto-arithmetic",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/res-pareto-arithmetic.git"
+  },
+  "dependencies": {
+    "api-pareto-arithmetic": "^0.1.0",
+    "pareto-core-internals": "^0.2.0"
+  },
+  "version": "0.1.0",
+  "content-fingerprint": "6a2307be2369c30eb2473281d8e625bd3dc0288f"
+}
