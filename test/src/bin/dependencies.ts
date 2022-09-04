@@ -1,8 +1,8 @@
 
 import * as bool from "res-pareto-boolean"
 
-import { Dependencies } from "../imp/createGetTestSet"
+import { DDependencies } from "../imp/createGetTestSet"
 
-export const dependencies: Dependencies = {
+export const dependencies: DDependencies = {
     equal: bool.equal
 }
