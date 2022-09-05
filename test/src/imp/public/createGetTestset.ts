@@ -5,15 +5,12 @@ import * as pl from "pareto-core-lib"
 import * as pw from "pareto-core-raw"
 
 import * as test from "lib-pareto-test"
-import * as bool from "api-pareto-boolean"
 
-import * as pub from "../../../pub"
+import * as api from "../../interface"
 
-export type DDependencies = {
-    equal: bool.Equal
-}
+import * as pub from "../../../../pub"
 
-export function createGetTestSet($d: DDependencies): test.GetTestSet {
+export const createGetTestset: api.XCreateGetTestset = ($d) => {
     return () => {
 
         const builder = pm.createDictionaryBuilder<test.TTestElement>(
