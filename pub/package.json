@@ -20,6 +20,6 @@
     "api-pareto-arithmetic": "^0.3.0",
     "pareto-core-internals": "^0.2.0"
   },
-  "version": "0.2.0",
+  "version": "0.3.0",
   "content-fingerprint": "b87151c9ba02f278318d0a0fa4ce45004aebe2c6"
 }
