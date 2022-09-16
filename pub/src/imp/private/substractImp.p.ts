@@ -1,5 +1,5 @@
 import * as api from "api-pareto-arithmetic"
 
-export const substractImp: api.FSubstract = ($) => {
+export const f_substractImp: api.FSubstract = ($) => {
     return $.minuend - $.subtrahend
 }

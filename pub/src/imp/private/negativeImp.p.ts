@@ -1,5 +1,5 @@
 import * as api from "api-pareto-arithmetic"
 
-export const negativeImp: api.FNegative = ($) => {
+export const f_negativeImp: api.FNegative = ($) => {
     return -$
 }

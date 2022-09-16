@@ -2,10 +2,9 @@ import * as api from "api-pareto-arithmetic"
 
 import * as pi from "pareto-core-internals"
 
-
-export const directoryMaxOrZeroImp: api.FDictionaryMaxOrZero = ($) => {
+export const f_maxOrZeroImp: api.FMaxOrZero = ($) => {
     let seed = 0
-    $.map(($) => {
+    pi.flatten($).forEach(($) => {
         seed = Math.max(seed, $)
     })
     return seed

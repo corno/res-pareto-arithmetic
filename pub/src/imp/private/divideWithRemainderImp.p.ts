@@ -1,6 +1,6 @@
 import * as api from "api-pareto-arithmetic"
 
-export const divideWithRemainderImp: api.FDivideWithRemainder = ($) => {
+export const f_divideWithRemainderImp: api.FDivideWithRemainder = ($) => {
     if ($.denominator === 0) {
         return null
     }
