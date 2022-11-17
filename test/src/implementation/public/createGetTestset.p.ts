@@ -13,12 +13,7 @@ import * as pub from "../../../../pub"
 export const f_createGetTestset: api.FCreateGetTestset = ($d) => {
     return () => {
 
-        const builder = pm.createDictionaryBuilder<test.TTestElement>(
-            ["ignore", {}],
-            ($) => {
-                pl.panic(`duplicate key: ${$}`)
-            }
-        )
+        const builder = pm.createUnsafeDictionaryBuilder<test.TTestElement>()
         function createTest(name: string, actual: number, expected: number) {
             builder.add(name, {
                 type: ["test", {
@@ -59,8 +54,10 @@ export const f_createGetTestset: api.FCreateGetTestset = ($d) => {
         createTest("substract", pub.f_substract({ minuend: 42, subtrahend: 7 }), 35)
 
         createTest("max", pub.f_maxOrZero([42, 6, 8]), 42)
-        // createTest("dictionaryMax", pub.f_directoryMaxOrZero(pw.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
-        // createTest("arrayMax", pub.f_arrayMaxOrZero(pw.wrapRawArray([42, 6, 8])), 42)
+        createTest("dictionaryMax", pub.f_directoryMaxOrZero(pw.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
+        createTest("arrayMax", pub.f_arrayMaxOrZero(pw.wrapRawArray([42, 6, 8])), 42)
+
+
 
         return pa.value({
             elements: builder.getDictionary()
