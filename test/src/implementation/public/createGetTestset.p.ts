@@ -1,5 +1,4 @@
 
-import * as pa from "pareto-core-async"
 import * as pm from "pareto-core-state"
 import * as pl from "pareto-core-lib"
 import * as pw from "pareto-core-raw"
@@ -10,7 +9,7 @@ import * as api from "../../interface"
 
 import * as pub from "../../../../pub"
 
-export const f_createGetTestset: api.FCreateGetTestset = ($d) => {
+export const createGetTestset: api.FCreateGetTestset = ($, $d) => {
     return () => {
 
         const builder = pm.createUnsafeDictionaryBuilder<test.TTestElement>()
@@ -59,7 +58,7 @@ export const f_createGetTestset: api.FCreateGetTestset = ($d) => {
 
 
 
-        return pa.value({
+        return pl.asyncValue({
             elements: builder.getDictionary()
         })
     }
