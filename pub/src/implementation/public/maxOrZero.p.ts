@@ -1,4 +1,4 @@
-import * as api from "api-pareto-arithmetic"
+import * as api from "../../api"
 
 import { f_maxOrZeroImp } from "../private/maxOrZeroImp.p"
 

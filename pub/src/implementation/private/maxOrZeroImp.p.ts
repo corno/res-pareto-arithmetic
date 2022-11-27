@@ -1,4 +1,4 @@
-import * as api from "api-pareto-arithmetic"
+import * as api from "../../api"
 
 import * as pi from "pareto-core-internals"
 
