@@ -1,4 +1,4 @@
-import * as bool from "api-pareto-boolean"
+import * as bool from "res-pareto-boolean"
 
 export type DDependencies = {
     readonly equal: bool.FEqual
