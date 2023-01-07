@@ -8,6 +8,8 @@ import * as test from "lib-pareto-test"
 import * as api from "../../interface"
 
 import * as pub from "../../../../pub"
+import * as bool from "res-pareto-boolean"
+
 
 export const createGetTestset: api.FCreateGetTestset = ($, $d) => {
     return () => {
@@ -16,23 +18,19 @@ export const createGetTestset: api.FCreateGetTestset = ($, $d) => {
         function createTest(name: string, actual: number, expected: number) {
             builder.add(name, {
                 type: ["test", {
-                    type: ["boolean", {
-                        test: $d.equal({ this: actual, that: expected }),
-                    }]
+                    type: ["boolean", bool.$a.equal({ this: actual, that: expected })]
                 }]
             })
         }
 
-        createTest("add - empty", pub.f_add([]), 0)
-        createTest("add - entries", pub.f_add([4, 6, 2]), 12)
-        createTest("negative", pub.f_negative(2), -2)
-        const x = pub.f_divideWithRemainder({ numerator: 7, denominator: 2 })
+        createTest("add - empty", pub.$a.add([]), 0)
+        createTest("add - entries", pub.$a.add([4, 6, 2]), 12)
+        createTest("negative", pub.$a.negate(2), -2)
+        const x = pub.$a.divideWithRemainder({ numerator: 7, denominator: 2 })
         if (x === null) {
             builder.add("unexpected division null", {
                 type: ["test", {
-                    type: ["boolean", {
-                        test: false,
-                    }]
+                    type: ["boolean", false]
                 }]
             })
         } else {
@@ -42,19 +40,17 @@ export const createGetTestset: api.FCreateGetTestset = ($, $d) => {
 
         builder.add("unexpected division not null", {
             type: ["test", {
-                type: ["boolean", {
-                    test: pub.f_divideWithRemainder({ numerator: 7, denominator: 0 }) === null,
-                }]
+                type: ["boolean", pub.$a.divideWithRemainder({ numerator: 7, denominator: 0 }) === null]
             }]
         })
-        createTest("multiply - empty", pub.f_multiply([]), 1)
-        createTest("multiply - entries", pub.f_multiply([7, 6]), 42)
+        createTest("multiply - empty", pub.$a.multiply([]), 1)
+        createTest("multiply - entries", pub.$a.multiply([7, 6]), 42)
 
-        createTest("substract", pub.f_substract({ minuend: 42, subtrahend: 7 }), 35)
+        createTest("substract", pub.$a.substract({ minuend: 42, subtrahend: 7 }), 35)
 
-        createTest("max", pub.f_maxOrZero([42, 6, 8]), 42)
-        createTest("dictionaryMax", pub.f_directoryMaxOrZero(pw.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
-        createTest("arrayMax", pub.f_arrayMaxOrZero(pw.wrapRawArray([42, 6, 8])), 42)
+        createTest("max", pub.$a.maxOrZero([42, 6, 8]), 42)
+        createTest("dictionaryMax", pub.$a.dictionaryMaxOrZero(pw.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
+        createTest("arrayMax", pub.$a.arrayMaxOrZero(pw.wrapRawArray([42, 6, 8])), 42)
 
 
 
