@@ -2,7 +2,6 @@ import * as pr from "pareto-core-raw"
 import {
     externalReference as er,
     string as str,
-    _null as nll,
     reference as ref,
     boolean as bln,
     number as nr,
@@ -12,15 +11,15 @@ import {
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
 
-import { string, _null, reference, externalReference, number, boolean } from "lib-pareto-typescript-project/dist/modules/api/api/shorthands.p"
+import { string, reference, externalReference, number, boolean } from "lib-pareto-typescript-project/dist/modules/api/api/shorthands.p"
 import * as NProject from "lib-pareto-typescript-project/dist/modules/project"
 const wd = pr.wrapRawDictionary
 export const project: NProject.TProject = {
-    resource: true,
-    modules: wd({
+    'resource': true,
+    'modules': wd({
         "main": {
-            definition: {
-                "glossary": {
+            'definition': {
+                'glossary': {
                     'imports': wd({
                     }),
                     'types': types({
@@ -88,109 +87,61 @@ export const project: NProject.TProject = {
                             'data': reference("SubstractData"),
                             'return value': number()
                         },
-                        // // "Negate": {
-                        // //     'data': number(),
-                        // //     'return value': number()
-                        // // },
-
-                        // // export type FAdd = pt.Function<TNumberRange, number>
-
-                        // // export type FMultiply = pt.Function<TNumberRange, number>
-
-                        // // export type FNegative = pt.Function<number, number>
-
-
-                        // // export type FDivideWithRemainder = pt.Function<
-                        // //     {
-
-                        // //     }
-                        // // >
-
-                        // // export type FSubstract = pt.Function<
-                        // //     {
-                        // //         readonly "minuend": number
-                        // //         readonly "subtrahend": number
-                        // //     },
-                        // //     number
-                        // // >
-
-
-
-                        // // export type FMaxOrZero = pt.Function<
-                        // //     pt.Nested<number>,
-                        // //     number
-                        // // >
-
-
-
-                        // // export type FDictionaryMaxOrZero = pt.Function<
-                        // //     pt.Dictionary<number>,
-                        // //     number
-                        // // >
-
-
-                        // // export type FArrayMaxOrZero = pt.Function<
-                        // //     pt.Array<number>,
-                        // //     number
-                        // // >
-
-
                     }),
                     'callbacks': wd({
                     }),
                     'interfaces': wd({}),
                 },
-                "api": {
-                    "imports": wd({
-                        // "main": "glo-pareto-main",
+                'api': {
+                    'imports': wd({
                     }),
-                    "algorithms": wd({
+                    'algorithms': wd({
                         "add": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "Add"
                             }],
                         }],
                         "arrayMaxOrZero": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "ArrayMaxOrZero"
                             }],
                         }],
                         "dictionaryMaxOrZero": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "DictionaryMaxOrZero"
                             }],
                         }],
                         "divideWithRemainder": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "DivideWithRemainder"
                             }],
                         }],
                         "maxOrZero": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "MaxOrZero"
                             }],
                         }],
                         "multiply": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "Multiply"
                             }],
                         }],
                         "negate": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "Negate"
                             }],
                         }],
                         "substract": ["algorithm", {
-                            type: ["function", {
+                            'type': ["function", {
                                 'function': "Substract"
                             }],
                         }],
                     })
                 },
             },
-            implementation: {}
+            'implementation': {}
 
         },
     }),
-    main: "main"
+    'main': "main"
 }
