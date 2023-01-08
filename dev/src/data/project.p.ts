@@ -96,45 +96,29 @@ export const project: NProject.TProject = {
                     'imports': wd({
                     }),
                     'algorithms': wd({
-                        "add": ['algorithm', {
-                            'type': ['function', {
-                                'function': "Add"
-                            }],
+                        "add": ['function', {
+                            'function': "Add"
                         }],
-                        "arrayMaxOrZero": ['algorithm', {
-                            'type': ['function', {
-                                'function': "ArrayMaxOrZero"
-                            }],
+                        "arrayMaxOrZero": ['function', {
+                            'function': "ArrayMaxOrZero"
                         }],
-                        "dictionaryMaxOrZero": ['algorithm', {
-                            'type': ['function', {
-                                'function': "DictionaryMaxOrZero"
-                            }],
+                        "dictionaryMaxOrZero": ['function', {
+                            'function': "DictionaryMaxOrZero"
                         }],
-                        "divideWithRemainder": ['algorithm', {
-                            'type': ['function', {
-                                'function': "DivideWithRemainder"
-                            }],
+                        "divideWithRemainder": ['function', {
+                            'function': "DivideWithRemainder"
                         }],
-                        "maxOrZero": ['algorithm', {
-                            'type': ['function', {
-                                'function': "MaxOrZero"
-                            }],
+                        "maxOrZero": ['function', {
+                            'function': "MaxOrZero"
                         }],
-                        "multiply": ['algorithm', {
-                            'type': ['function', {
-                                'function': "Multiply"
-                            }],
+                        "multiply": ['function', {
+                            'function': "Multiply"
                         }],
-                        "negate": ['algorithm', {
-                            'type': ['function', {
-                                'function': "Negate"
-                            }],
+                        "negate":['function', {
+                            'function': "Negate"
                         }],
-                        "substract": ['algorithm', {
-                            'type': ['function', {
-                                'function': "Substract"
-                            }],
+                        "substract": ['function', {
+                            'function': "Substract"
                         }],
                     })
                 },
