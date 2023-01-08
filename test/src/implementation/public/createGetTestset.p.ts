@@ -17,8 +17,8 @@ export const createGetTestset: api.FCreateGetTestset = ($, $d) => {
         const builder = pm.createUnsafeDictionaryBuilder<test.TTestElement>()
         function createTest(name: string, actual: number, expected: number) {
             builder.add(name, {
-                type: ["test", {
-                    type: ["boolean", bool.$a.equal({ this: actual, that: expected })]
+                type: ['test', {
+                    type: ['boolean', bool.$a.equal({ this: actual, that: expected })]
                 }]
             })
         }
@@ -29,8 +29,8 @@ export const createGetTestset: api.FCreateGetTestset = ($, $d) => {
         const x = pub.$a.divideWithRemainder({ numerator: 7, denominator: 2 })
         if (x === null) {
             builder.add("unexpected division null", {
-                type: ["test", {
-                    type: ["boolean", false]
+                type: ['test', {
+                    type: ['boolean', false]
                 }]
             })
         } else {
@@ -39,8 +39,8 @@ export const createGetTestset: api.FCreateGetTestset = ($, $d) => {
         }
 
         builder.add("unexpected division not null", {
-            type: ["test", {
-                type: ["boolean", pub.$a.divideWithRemainder({ numerator: 7, denominator: 0 }) === null]
+            type: ['test', {
+                type: ['boolean', pub.$a.divideWithRemainder({ numerator: 7, denominator: 0 }) === null]
             }]
         })
         createTest("multiply - empty", pub.$a.multiply([]), 1)

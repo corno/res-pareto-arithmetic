@@ -23,7 +23,7 @@ export const project: NProject.TProject = {
                     'imports': wd({
                     }),
                     'types': types({
-                        "NumberRange": ["nested", nr()],
+                        "NumberRange": ['nested', nr()],
                         "DivisionData": group({
                             "numerator": member(nr()),
                             "denominator": member(nr()),
@@ -96,43 +96,43 @@ export const project: NProject.TProject = {
                     'imports': wd({
                     }),
                     'algorithms': wd({
-                        "add": ["algorithm", {
-                            'type': ["function", {
+                        "add": ['algorithm', {
+                            'type': ['function', {
                                 'function': "Add"
                             }],
                         }],
-                        "arrayMaxOrZero": ["algorithm", {
-                            'type': ["function", {
+                        "arrayMaxOrZero": ['algorithm', {
+                            'type': ['function', {
                                 'function': "ArrayMaxOrZero"
                             }],
                         }],
-                        "dictionaryMaxOrZero": ["algorithm", {
-                            'type': ["function", {
+                        "dictionaryMaxOrZero": ['algorithm', {
+                            'type': ['function', {
                                 'function': "DictionaryMaxOrZero"
                             }],
                         }],
-                        "divideWithRemainder": ["algorithm", {
-                            'type': ["function", {
+                        "divideWithRemainder": ['algorithm', {
+                            'type': ['function', {
                                 'function': "DivideWithRemainder"
                             }],
                         }],
-                        "maxOrZero": ["algorithm", {
-                            'type': ["function", {
+                        "maxOrZero": ['algorithm', {
+                            'type': ['function', {
                                 'function': "MaxOrZero"
                             }],
                         }],
-                        "multiply": ["algorithm", {
-                            'type': ["function", {
+                        "multiply": ['algorithm', {
+                            'type': ['function', {
                                 'function': "Multiply"
                             }],
                         }],
-                        "negate": ["algorithm", {
-                            'type': ["function", {
+                        "negate": ['algorithm', {
+                            'type': ['function', {
                                 'function': "Negate"
                             }],
                         }],
-                        "substract": ["algorithm", {
-                            'type': ["function", {
+                        "substract": ['algorithm', {
+                            'type': ['function', {
                                 'function': "Substract"
                             }],
                         }],
