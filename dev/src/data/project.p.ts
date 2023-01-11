@@ -15,13 +15,12 @@ import { string, reference, externalReference, number, boolean } from "lib-paret
 import * as NProject from "lib-pareto-typescript-project/dist/modules/project"
 const wd = pr.wrapRawDictionary
 export const project: NProject.TProject = {
-    'resource': true,
+    'type': ['resource', null],
     'modules': wd({
         "main": {
             'definition': {
                 'glossary': {
-                    'imports': wd({
-                    }),
+                    'imports': wd({}),
                     'types': types({
                         "NumberRange": ['nested', nr()],
                         "DivisionData": group({
@@ -88,38 +87,61 @@ export const project: NProject.TProject = {
                             'return value': number()
                         },
                     }),
-                    'callbacks': wd({
-                    }),
                     'interfaces': wd({}),
+                    'callbacks': wd({}),
+                    'pipes': wd({}),
                 },
                 'api': {
-                    'imports': wd({
-                    }),
+                    'imports': wd({}),
                     'algorithms': wd({
-                        "add": ['function', {
-                            'function': "Add"
-                        }],
-                        "arrayMaxOrZero": ['function', {
-                            'function': "ArrayMaxOrZero"
-                        }],
-                        "dictionaryMaxOrZero": ['function', {
-                            'function': "DictionaryMaxOrZero"
-                        }],
-                        "divideWithRemainder": ['function', {
-                            'function': "DivideWithRemainder"
-                        }],
-                        "maxOrZero": ['function', {
-                            'function': "MaxOrZero"
-                        }],
-                        "multiply": ['function', {
-                            'function': "Multiply"
-                        }],
-                        "negate":['function', {
-                            'function': "Negate"
-                        }],
-                        "substract": ['function', {
-                            'function': "Substract"
-                        }],
+                        "add": {
+                            'definition': ['function', {
+                                'function': "Add"
+                            }],
+                            'type': ['reference', null],
+                        },
+                        "arrayMaxOrZero": {
+                            'definition': ['function', {
+                                'function': "ArrayMaxOrZero"
+                            }],
+                            'type': ['reference', null],
+                        },
+                        "dictionaryMaxOrZero": {
+                            'definition': ['function', {
+                                'function': "DictionaryMaxOrZero"
+                            }],
+                            'type': ['reference', null],
+                        },
+                        "divideWithRemainder": {
+                            'definition': ['function', {
+                                'function': "DivideWithRemainder"
+                            }],
+                            'type': ['reference', null],
+                        },
+                        "maxOrZero": {
+                            'definition': ['function', {
+                                'function': "MaxOrZero"
+                            }],
+                            'type': ['reference', null],
+                        },
+                        "multiply": {
+                            'definition': ['function', {
+                                'function': "Multiply"
+                            }],
+                            'type': ['reference', null],
+                        },
+                        "negate": {
+                            'definition': ['function', {
+                                'function': "Negate"
+                            }],
+                            'type': ['reference', null],
+                        },
+                        "substract": {
+                            'definition': ['function', {
+                                'function': "Substract"
+                            }],
+                            'type': ['reference', null],
+                        },
                     })
                 },
             },

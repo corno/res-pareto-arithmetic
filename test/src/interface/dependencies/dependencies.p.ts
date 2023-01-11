@@ -1,3 +1,2 @@
 
-export type DDependencies = {
-}
+export type DDependencies = {}
