@@ -1,4 +1,5 @@
 import * as pt from "pareto-core-types"
+import * as mcommon from "glo-pareto-common"
 
 export type TDivisionData = {
     readonly "denominator": number
@@ -21,18 +22,18 @@ export type TSubstractData = {
     readonly "subtrahend": number
 }
 
-export type FAdd = ($: TNumberRange) => number
+export type FAdd = ($: TNumberRange) => mcommon.TNumber
 
-export type FArrayMaxOrZero = ($: TNumberArray) => number
+export type FArrayMaxOrZero = ($: TNumberArray) => mcommon.TNumber
 
-export type FDictionaryMaxOrZero = ($: TNumberDictionary) => number
+export type FDictionaryMaxOrZero = ($: TNumberDictionary) => mcommon.TNumber
 
 export type FDivideWithRemainder = ($: TDivisionData) => TDivisionResult
 
-export type FMaxOrZero = ($: TNumberRange) => number
+export type FMaxOrZero = ($: TNumberRange) => mcommon.TNumber
 
-export type FMultiply = ($: TNumberRange) => number
+export type FMultiply = ($: TNumberRange) => mcommon.TNumber
 
-export type FNegate = ($: number) => number
+export type FNegate = ($: mcommon.TNumber) => mcommon.TNumber
 
-export type FSubstract = ($: TSubstractData) => number
+export type FSubstract = ($: TSubstractData) => mcommon.TNumber

@@ -2,14 +2,14 @@ import * as pr from "pareto-core-raw"
 import {
     externalReference as er,
     string as str,
-    nullType,
-    type,
     reference as ref,
     boolean as bln,
     number as nr,
     nested,
     optional,
     array,
+    typeReference,
+    externalTypeReference,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
@@ -22,7 +22,9 @@ const d = pr.wrapRawDictionary
 
 export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
-        'imports': d({}),
+        'imports': d({
+            "common": "glo-pareto-common",
+        }),
         'namespace': {
             'types': types({
                 "NumberRange": ['nested', nr()],
@@ -48,49 +50,49 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         },
         'functions': d({
             "Add": {
-                'data': reference("NumberRange"),
-                'return value': number()
+                'data': typeReference("NumberRange"),
+                'return value': externalTypeReference("common", "Number"),
             },
             "Multiply": {
-                'data': reference("NumberRange"),
-                'return value': number()
+                'data': typeReference("NumberRange"),
+                'return value': externalTypeReference("common", "Number"),
             },
             "Negate": {
-                'data': number(),
-                'return value': number()
+                'data': externalTypeReference("common", "Number"),
+                'return value': externalTypeReference("common", "Number"),
             },
             /**
             * if the denominator is 0, the return value is null
             * (division by 0)
             */
             "DivideWithRemainder": {
-                'data': reference("DivisionData"),
-                'return value': reference("DivisionResult")
+                'data': typeReference("DivisionData"),
+                'return value': typeReference("DivisionResult")
             },
             /**
              * calculates the max of an array of numbers. If there are no entries, the result value is 0
              */
             "ArrayMaxOrZero": {
-                'data': reference("NumberArray"),
-                'return value': number()
+                'data': typeReference("NumberArray"),
+                'return value': externalTypeReference("common", "Number"),
             },
             /**
              * calculates the max of a dictionary of number. If there are no entries, the result value is 0
              */
             "DictionaryMaxOrZero": {
-                'data': reference("NumberDictionary"),
-                'return value': number()
+                'data': typeReference("NumberDictionary"),
+                'return value': externalTypeReference("common", "Number"),
             },
             /**
             * calculates the max of a range. If there are no entries, the result value is 0
             */
             "MaxOrZero": {
-                'data': reference("NumberRange"),
-                'return value': number()
+                'data': typeReference("NumberRange"),
+                'return value': externalTypeReference("common", "Number"),
             },
             "Substract": {
-                'data': reference("SubstractData"),
-                'return value': number()
+                'data': typeReference("SubstractData"),
+                'return value': externalTypeReference("common", "Number"),
             },
         }),
         'callbacks': d({}),
