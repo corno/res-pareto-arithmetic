@@ -1,5 +1,5 @@
 import * as api from "../api"
 
-export const isubstract: api.Csubstract = ($) => {
+export const $$: api.Csubstract = ($) => {
     return $.minuend - $.subtrahend
 }

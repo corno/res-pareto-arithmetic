@@ -1,14 +1,14 @@
-import * as pt from "pareto-core-types"
+import * as pt from 'pareto-core-types'
 import * as mcommon from "glo-pareto-common"
 
 export type TDivisionData = {
-    readonly "denominator": number
-    readonly "numerator": number
+    readonly 'denominator': number
+    readonly 'numerator': number
 }
 
 export type TDivisionResult = null | {
-    readonly "quotient": number
-    readonly "remainder": number
+    readonly 'quotient': number
+    readonly 'remainder': number
 }
 
 export type TNumberArray = pt.Array<number>
@@ -18,8 +18,8 @@ export type TNumberDictionary = pt.Dictionary<number>
 export type TNumberRange = pt.Nested<number>
 
 export type TSubstractData = {
-    readonly "minuend": number
-    readonly "subtrahend": number
+    readonly 'minuend': number
+    readonly 'subtrahend': number
 }
 
 export type FAdd = ($: TNumberRange) => mcommon.TNumber

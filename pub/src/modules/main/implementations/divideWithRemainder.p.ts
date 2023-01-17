@@ -1,6 +1,6 @@
 import * as api from "../api"
 
-export const idivideWithRemainder: api.CdivideWithRemainder = ($) => {
+export const $$: api.CdivideWithRemainder = ($) => {
     if ($.denominator === 0) {
         return null
     }
