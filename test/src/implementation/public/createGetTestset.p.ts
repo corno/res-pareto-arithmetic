@@ -1,7 +1,7 @@
 
-import * as pm from "pareto-core-state"
-import * as pl from "pareto-core-lib"
-import * as pw from "pareto-core-raw"
+import * as pm from 'pareto-core-state'
+import * as pl from 'pareto-core-lib'
+import * as pw from 'pareto-core-raw'
 
 import * as test from "lib-pareto-test"
 
