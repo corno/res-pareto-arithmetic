@@ -1,19 +1,19 @@
 
-import * as pm from 'pareto-core-state'
+import * as ps from 'pareto-core-state'
 import * as pl from 'pareto-core-lib'
-import * as pw from 'pareto-core-raw'
+import * as pr from 'pareto-core-raw'
 
-import * as test from "lib-pareto-test"
+import * as mtest from "lib-pareto-test"
 
 import * as api from "../api"
 
-import * as pub from "../../../../../pub/dist"
+import * as pub from "../../../../../pub"
 import * as bool from "res-pareto-boolean"
 
 
 export const $$: api.CgetTestSet = () => {
 
-    const builder = pm.createUnsafeDictionaryBuilder<test.TTestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<mtest.TTestElement>()
     function createTest(name: string, actual: number, expected: number) {
         builder.add(name, {
             type: ['test', {
@@ -48,10 +48,8 @@ export const $$: api.CgetTestSet = () => {
     createTest("substract", pub.$a.substract({ minuend: 42, subtrahend: 7 }), 35)
 
     createTest("max", pub.$a.maxOrZero([42, 6, 8]), 42)
-    createTest("dictionaryMax", pub.$a.dictionaryMaxOrZero(pw.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
-    createTest("arrayMax", pub.$a.arrayMaxOrZero(pw.wrapRawArray([42, 6, 8])), 42)
-
-
+    createTest("dictionaryMax", pub.$a.dictionaryMaxOrZero(pr.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
+    createTest("arrayMax", pub.$a.arrayMaxOrZero(pr.wrapRawArray([42, 6, 8])), 42)
 
     return pl.asyncValue({
         elements: builder.getDictionary()
