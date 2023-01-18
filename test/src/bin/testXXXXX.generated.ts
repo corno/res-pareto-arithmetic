@@ -3,14 +3,14 @@ import * as pr from 'pareto-core-raw'
 import * as pl from 'pareto-core-lib'
 import * as tst from "lib-pareto-test"
 
-import { test as main_add } from "../modules/main/add.p"
-import { test as main_arrayMaxOrZero } from "../modules/main/arrayMaxOrZero.p"
-import { test as main_dictionaryMaxOrZero } from "../modules/main/dictionaryMaxOrZero.p"
-import { test as main_divideWithRemainder } from "../modules/main/divideWithRemainder.p"
-import { test as main_maxOrZero } from "../modules/main/maxOrZero.p"
-import { test as main_multiply } from "../modules/main/multiply.p"
-import { test as main_negate } from "../modules/main/negate.p"
-import { test as main_substract } from "../modules/main/substract.p"
+import { test as main_add } from "../modules/main/add.generated"
+import { test as main_arrayMaxOrZero } from "../modules/main/arrayMaxOrZero.generated"
+import { test as main_dictionaryMaxOrZero } from "../modules/main/dictionaryMaxOrZero.generated"
+import { test as main_divideWithRemainder } from "../modules/main/divideWithRemainder.generated"
+import { test as main_maxOrZero } from "../modules/main/maxOrZero.generated"
+import { test as main_multiply } from "../modules/main/multiply.generated"
+import { test as main_negate } from "../modules/main/negate.generated"
+import { test as main_substract } from "../modules/main/substract.generated"
 
 const x = pr.wrapRawDictionary<pt.Dictionary<() => pt.AsyncValue<tst.TTestElement>>>({
     'main': pr.wrapRawDictionary({
