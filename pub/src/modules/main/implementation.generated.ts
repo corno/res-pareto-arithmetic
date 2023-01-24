@@ -1,12 +1,12 @@
 import { API } from "./api"
-import { $$ as iadd } from "./implementations/add.p"
-import { $$ as iarrayMaxOrZero } from "./implementations/arrayMaxOrZero.p"
-import { $$ as idictionaryMaxOrZero } from "./implementations/dictionaryMaxOrZero.p"
-import { $$ as idivideWithRemainder } from "./implementations/divideWithRemainder.p"
-import { $$ as imaxOrZero } from "./implementations/maxOrZero.p"
-import { $$ as imultiply } from "./implementations/multiply.p"
-import { $$ as inegate } from "./implementations/negate.p"
-import { $$ as isubstract } from "./implementations/substract.p"
+import { $$ as iadd } from "./implementations/add.native"
+import { $$ as iarrayMaxOrZero } from "./implementations/arrayMaxOrZero.native"
+import { $$ as idictionaryMaxOrZero } from "./implementations/dictionaryMaxOrZero.native"
+import { $$ as idivideWithRemainder } from "./implementations/divideWithRemainder.native"
+import { $$ as imaxOrZero } from "./implementations/maxOrZero.native"
+import { $$ as imultiply } from "./implementations/multiply.native"
+import { $$ as inegate } from "./implementations/negate.native"
+import { $$ as isubstract } from "./implementations/substract.native"
 
 export const $a: API = {
     'add': iadd,
