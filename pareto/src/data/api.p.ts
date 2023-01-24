@@ -14,7 +14,7 @@ import {
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
 
-import { string, reference, externalReference, number, boolean } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, externalDefinitionReference, constructor } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
@@ -49,104 +49,62 @@ export const $: mmoduleDefinition.TModuleDefinition = {
 
         },
         'functions': d({
-            "Add": {
-                'data': typeReference("NumberRange"),
-                'return value': externalTypeReference("common", "Number"),
-            },
-            "Multiply": {
-                'data': typeReference("NumberRange"),
-                'return value': externalTypeReference("common", "Number"),
-            },
-            "Negate": {
-                'data': externalTypeReference("common", "Number"),
-                'return value': externalTypeReference("common", "Number"),
-            },
+            "Add": _function( typeReference("NumberRange"), externalTypeReference("common", "Number")),
+            "Multiply": _function(typeReference("NumberRange"), externalTypeReference("common", "Number")),
+            "Negate": _function( externalTypeReference("common", "Number"), externalTypeReference("common", "Number")),
             /**
             * if the denominator is 0, the return value is null
             * (division by 0)
             */
-            "DivideWithRemainder": {
-                'data': typeReference("DivisionData"),
-                'return value': typeReference("DivisionResult")
-            },
+            "DivideWithRemainder": _function( typeReference("DivisionData"), typeReference("DivisionResult")),
             /**
              * calculates the max of an array of numbers. If there are no entries, the result value is 0
              */
-            "ArrayMaxOrZero": {
-                'data': typeReference("NumberArray"),
-                'return value': externalTypeReference("common", "Number"),
-            },
+            "ArrayMaxOrZero": _function( typeReference("NumberArray"),  externalTypeReference("common", "Number")),
             /**
              * calculates the max of a dictionary of number. If there are no entries, the result value is 0
              */
-            "DictionaryMaxOrZero": {
-                'data': typeReference("NumberDictionary"),
-                'return value': externalTypeReference("common", "Number"),
-            },
+            "DictionaryMaxOrZero": _function( typeReference("NumberDictionary"), externalTypeReference("common", "Number")),
             /**
             * calculates the max of a range. If there are no entries, the result value is 0
             */
-            "MaxOrZero": {
-                'data': typeReference("NumberRange"),
-                'return value': externalTypeReference("common", "Number"),
-            },
-            "Substract": {
-                'data': typeReference("SubstractData"),
-                'return value': externalTypeReference("common", "Number"),
-            },
+            "MaxOrZero": _function( typeReference("NumberRange"), externalTypeReference("common", "Number")),
+            "Substract": _function( typeReference("SubstractData"), externalTypeReference("common", "Number")),
         }),
-        'callbacks': d({}),
-        'pipes': d({}),
     },
     'api': {
         'imports': d({}),
         'algorithms': d({
             "add": {
-                'definition': ['function', {
-                    'function': "Add"
-                }],
+                'definition': definitionReference("Add"),
                 'type': ['reference', null],
             },
             "arrayMaxOrZero": {
-                'definition': ['function', {
-                    'function': "ArrayMaxOrZero"
-                }],
+                'definition': definitionReference("ArrayMaxOrZero"),
                 'type': ['reference', null],
             },
             "dictionaryMaxOrZero": {
-                'definition': ['function', {
-                    'function': "DictionaryMaxOrZero"
-                }],
+                'definition': definitionReference("DictionaryMaxOrZero"),
                 'type': ['reference', null],
             },
             "divideWithRemainder": {
-                'definition': ['function', {
-                    'function': "DivideWithRemainder"
-                }],
+                'definition': definitionReference("DivideWithRemainder"),
                 'type': ['reference', null],
             },
             "maxOrZero": {
-                'definition': ['function', {
-                    'function': "MaxOrZero"
-                }],
+                'definition': definitionReference("MaxOrZero"),
                 'type': ['reference', null],
             },
             "multiply": {
-                'definition': ['function', {
-                    'function': "Multiply"
-                }],
+                'definition': definitionReference("Multiply"),
                 'type': ['reference', null],
             },
             "negate": {
-                'definition': ['function', {
-                    'function': "Negate"
-                }],
+                'definition': definitionReference("Negate"),
                 'type': ['reference', null],
             },
             "substract": {
-                'definition': ['function', {
-                    'function': "Substract"
-                }],
+                'definition': definitionReference("Substract"),
                 'type': ['reference', null],
             },
         })
