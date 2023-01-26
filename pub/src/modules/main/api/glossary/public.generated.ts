@@ -1,26 +1,20 @@
 import * as pt from 'pareto-core-types'
+
+import * as t from './types.generated'
+
 import * as mcommon from "glo-pareto-common"
 
-export type TDivisionData = {
-    readonly 'denominator': number
-    readonly 'numerator': number
-}
+export type TDivisionData = t.UDivisionData
 
-export type TDivisionResult = null | {
-    readonly 'quotient': number
-    readonly 'remainder': number
-}
+export type TDivisionResult = t.UDivisionResult
 
-export type TNumberArray = pt.Array<number>
+export type TNumberArray = t.UNumberArray
 
-export type TNumberDictionary = pt.Dictionary<number>
+export type TNumberDictionary = t.UNumberDictionary
 
-export type TNumberRange = pt.Nested<number>
+export type TNumberRange = t.UNumberRange
 
-export type TSubstractData = {
-    readonly 'minuend': number
-    readonly 'subtrahend': number
-}
+export type TSubstractData = t.USubstractData
 
 export type FAdd = ($: TNumberRange,) => mcommon.TNumber
 

@@ -26,51 +26,48 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'namespace': {
-            'types': types({
-                "NumberRange": ['nested', nr()],
-                "DivisionData": group({
-                    "numerator": member(nr()),
-                    "denominator": member(nr()),
+        'types': types({
+            "NumberRange": ['nested', nr()],
+            "DivisionData": group({
+                "numerator": member(nr()),
+                "denominator": member(nr()),
 
-                }),
-                "DivisionResult": optional(group({
-                    "quotient": member(nr()),
-                    "remainder": member(nr()),
-
-                })),
-                "SubstractData": group({
-                    "minuend": member(nr()),
-                    "subtrahend": member(nr()),
-                }),
-                "NumberDictionary": dictionary(nr()),
-                "NumberArray": array(nr()),
             }),
-            'interfaces': d({}),
+            "DivisionResult": optional(group({
+                "quotient": member(nr()),
+                "remainder": member(nr()),
 
-        },
+            })),
+            "SubstractData": group({
+                "minuend": member(nr()),
+                "subtrahend": member(nr()),
+            }),
+            "NumberDictionary": dictionary(nr()),
+            "NumberArray": array(nr()),
+        }),
+        'interfaces': d({}),
         'functions': d({
-            "Add": _function( typeReference("NumberRange"), externalTypeReference("common", "Number")),
+            "Add": _function(typeReference("NumberRange"), externalTypeReference("common", "Number")),
             "Multiply": _function(typeReference("NumberRange"), externalTypeReference("common", "Number")),
-            "Negate": _function( externalTypeReference("common", "Number"), externalTypeReference("common", "Number")),
+            "Negate": _function(externalTypeReference("common", "Number"), externalTypeReference("common", "Number")),
             /**
             * if the denominator is 0, the return value is null
             * (division by 0)
             */
-            "DivideWithRemainder": _function( typeReference("DivisionData"), typeReference("DivisionResult")),
+            "DivideWithRemainder": _function(typeReference("DivisionData"), typeReference("DivisionResult")),
             /**
              * calculates the max of an array of numbers. If there are no entries, the result value is 0
              */
-            "ArrayMaxOrZero": _function( typeReference("NumberArray"),  externalTypeReference("common", "Number")),
+            "ArrayMaxOrZero": _function(typeReference("NumberArray"), externalTypeReference("common", "Number")),
             /**
              * calculates the max of a dictionary of number. If there are no entries, the result value is 0
              */
-            "DictionaryMaxOrZero": _function( typeReference("NumberDictionary"), externalTypeReference("common", "Number")),
+            "DictionaryMaxOrZero": _function(typeReference("NumberDictionary"), externalTypeReference("common", "Number")),
             /**
             * calculates the max of a range. If there are no entries, the result value is 0
             */
-            "MaxOrZero": _function( typeReference("NumberRange"), externalTypeReference("common", "Number")),
-            "Substract": _function( typeReference("SubstractData"), externalTypeReference("common", "Number")),
+            "MaxOrZero": _function(typeReference("NumberRange"), externalTypeReference("common", "Number")),
+            "Substract": _function(typeReference("SubstractData"), externalTypeReference("common", "Number")),
         }),
     },
     'api': {
