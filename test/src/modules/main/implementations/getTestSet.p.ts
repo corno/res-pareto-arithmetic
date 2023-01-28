@@ -50,7 +50,7 @@ export const $$: api.CgetTestSet = () => {
 
     builder.add("unexpected division not null", {
         type: ['test', {
-            type: ['boolean', pub.$a.divideWithRemainder({ numerator: 7, denominator: 0 }) === null]
+            type: ['boolean', pub.$a.divideWithRemainder({ numerator: 7, denominator: 0 })[0] === 'not set']
         }]
     })
     createTest("multiply - empty", pub.$a.multiply([]), 1)
