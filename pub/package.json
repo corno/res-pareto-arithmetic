@@ -17,9 +17,9 @@
     "url": "git+https://github.com/corno/res-pareto-arithmetic.git"
   },
   "dependencies": {
-    "glo-pareto-common": "^0.8.0",
+    "glo-pareto-common": "^0.9.0",
     "pareto-core-internals": "^0.11.0"
   },
   "version": "0.10.0",
-  "content-fingerprint": "d6274a91bff7e95d5e56a0adf69e6b1d6396fa73"
+  "content-fingerprint": "bcee356b2a252a7c8fdf835146144a60abc1caf5"
 }

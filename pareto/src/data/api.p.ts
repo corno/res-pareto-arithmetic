@@ -1,24 +1,15 @@
 import * as pr from 'pareto-core-raw'
 import {
-    externalReference as er,
-    string as str,
-    reference as ref,
-    boolean as bln,
-    number as nr,
     nested,
-    optional,
     array,
-    typeReference,
-    externalTypeReference,
+    typeReference, dictionary, group, member, taggedUnion, types, _function, number, parameter, template,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
-import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 
-import { definitionReference, externalDefinitionReference, constructor } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
-
 
 export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
@@ -26,31 +17,41 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({}),
+        'templates': d({
+            "Optional": {
+                'parameters': d({ "Type": {}, }),
+                'type': taggedUnion({
+                    "set": parameter("Type"),
+                    "not set": group({}),
+                })
+            }
+        }),
         'types': types({
-            "NumberRange": ['nested', nr()],
+            "NumberRange": nested(number()),
             "DivisionData": group({
-                "numerator": member(nr()),
-                "denominator": member(nr()),
+                "numerator": member(number()),
+                "denominator": member(number()),
 
             }),
-            "DivisionResult": optional(group({
-                "quotient": member(nr()),
-                "remainder": member(nr()),
-
-            })),
+            "DivisionResult": template("Optional", {
+                "Type": group({
+                    "quotient": member(number()),
+                    "remainder": member(number()),
+    
+                })
+            }),
             "SubstractData": group({
-                "minuend": member(nr()),
-                "subtrahend": member(nr()),
+                "minuend": member(number()),
+                "subtrahend": member(number()),
             }),
-            "NumberDictionary": dictionary(nr()),
-            "NumberArray": array(nr()),
+            "NumberDictionary": dictionary(number()),
+            "NumberArray": array(number()),
         }),
         'interfaces': d({}),
         'functions': d({
-            "Add": _function(typeReference("NumberRange"), externalTypeReference("common", "Number")),
-            "Multiply": _function(typeReference("NumberRange"), externalTypeReference("common", "Number")),
-            "Negate": _function(externalTypeReference("common", "Number"), externalTypeReference("common", "Number")),
+            "Add": _function(typeReference("NumberRange"), typeReference("common", "Number")),
+            "Multiply": _function(typeReference("NumberRange"), typeReference("common", "Number")),
+            "Negate": _function(typeReference("common", "Number"), typeReference("common", "Number")),
             /**
             * if the denominator is 0, the return value is null
             * (division by 0)
@@ -59,53 +60,29 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             /**
              * calculates the max of an array of numbers. If there are no entries, the result value is 0
              */
-            "ArrayMaxOrZero": _function(typeReference("NumberArray"), externalTypeReference("common", "Number")),
+            "ArrayMaxOrZero": _function(typeReference("NumberArray"), typeReference("common", "Number")),
             /**
              * calculates the max of a dictionary of number. If there are no entries, the result value is 0
              */
-            "DictionaryMaxOrZero": _function(typeReference("NumberDictionary"), externalTypeReference("common", "Number")),
+            "DictionaryMaxOrZero": _function(typeReference("NumberDictionary"), typeReference("common", "Number")),
             /**
             * calculates the max of a range. If there are no entries, the result value is 0
             */
-            "MaxOrZero": _function(typeReference("NumberRange"), externalTypeReference("common", "Number")),
-            "Substract": _function(typeReference("SubstractData"), externalTypeReference("common", "Number")),
+            "MaxOrZero": _function(typeReference("NumberRange"), typeReference("common", "Number")),
+            "Substract": _function(typeReference("SubstractData"), typeReference("common", "Number")),
         }),
     },
     'api': {
         'imports': d({}),
         'algorithms': d({
-            "add": {
-                'definition': definitionReference("Add"),
-                'type': ['reference', null],
-            },
-            "arrayMaxOrZero": {
-                'definition': definitionReference("ArrayMaxOrZero"),
-                'type': ['reference', null],
-            },
-            "dictionaryMaxOrZero": {
-                'definition': definitionReference("DictionaryMaxOrZero"),
-                'type': ['reference', null],
-            },
-            "divideWithRemainder": {
-                'definition': definitionReference("DivideWithRemainder"),
-                'type': ['reference', null],
-            },
-            "maxOrZero": {
-                'definition': definitionReference("MaxOrZero"),
-                'type': ['reference', null],
-            },
-            "multiply": {
-                'definition': definitionReference("Multiply"),
-                'type': ['reference', null],
-            },
-            "negate": {
-                'definition': definitionReference("Negate"),
-                'type': ['reference', null],
-            },
-            "substract": {
-                'definition': definitionReference("Substract"),
-                'type': ['reference', null],
-            },
+            "add": algorithm(definitionReference("Add")),
+            "arrayMaxOrZero": algorithm(definitionReference("ArrayMaxOrZero")),
+            "dictionaryMaxOrZero": algorithm(definitionReference("DictionaryMaxOrZero")),
+            "divideWithRemainder": algorithm(definitionReference("DivideWithRemainder")),
+            "maxOrZero": algorithm(definitionReference("MaxOrZero")),
+            "multiply": algorithm(definitionReference("Multiply")),
+            "negate": algorithm(definitionReference("Negate")),
+            "substract": algorithm(definitionReference("Substract")),
         })
     },
 }

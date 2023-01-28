@@ -2,6 +2,17 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
+export namespace VOptional {
+    
+    export namespace Onot__set {}
+    export type Onot__set<AType> = {}
+}
+export type VOptional<AType> = 
+    | ['not set', VOptional.Onot__set<AType>]
+    | ['set', AType]
+
+export type MOptional<AType> = VOptional<AType>
+
 export namespace GDivisionData {}
 export type GDivisionData = {
     readonly 'denominator': number
@@ -11,13 +22,13 @@ export type UDivisionData = GDivisionData
 
 export namespace GDivisionResult {
     
-    export namespace O {}
-    export type O = {
+    export namespace TPType {}
+    export type TPType = {
         readonly 'quotient': number
         readonly 'remainder': number
     }
 }
-export type GDivisionResult = null | GDivisionResult.O
+export type GDivisionResult = MOptional<GDivisionResult.TPType>
 export type UDivisionResult = GDivisionResult
 
 export namespace GNumberArray {}

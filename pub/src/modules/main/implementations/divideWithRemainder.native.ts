@@ -2,11 +2,11 @@ import * as api from "../api"
 
 export const $$: api.CdivideWithRemainder = ($) => {
     if ($.denominator === 0) {
-        return null
+        return ['not set', {}]
     }
-    return {
+    return ['set', {
         quotient: Math.floor($.numerator / $.denominator),
         remainder: $.numerator % $.denominator
-    }
+    }]
 
 }

@@ -25,17 +25,28 @@ export const $$: api.CgetTestSet = () => {
     createTest("add - empty", pub.$a.add([]), 0)
     createTest("add - entries", pub.$a.add([4, 6, 2]), 12)
     createTest("negative", pub.$a.negate(2), -2)
-    const x = pub.$a.divideWithRemainder({ numerator: 7, denominator: 2 })
-    if (x === null) {
-        builder.add("unexpected division null", {
-            type: ['test', {
-                type: ['boolean', false]
-            }]
-        })
-    } else {
-        createTest("quotient", x.quotient, 3)
-        createTest("modulo", x.remainder, 1)
-    }
+    pl.cc(pub.$a.divideWithRemainder({ numerator: 7, denominator: 2 }), ($) => {
+        switch ($[0]) {
+            case 'not set':
+                pl.cc($[1], ($) => {
+    
+                    builder.add("unexpected division null", {
+                        type: ['test', {
+                            type: ['boolean', false]
+                        }]
+                    })
+                })
+                break
+            case 'set':
+                pl.cc($[1], ($) => {
+    
+                    createTest("quotient", $.quotient, 3)
+                    createTest("modulo", $.remainder, 1)
+                })
+                break
+            default: pl.au($[0])
+        }
+    })
 
     builder.add("unexpected division not null", {
         type: ['test', {
