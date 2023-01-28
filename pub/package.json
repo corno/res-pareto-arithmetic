@@ -20,6 +20,6 @@
     "glo-pareto-common": "^0.9.0",
     "pareto-core-internals": "^0.11.0"
   },
-  "version": "0.10.0",
+  "version": "0.11.0",
   "content-fingerprint": "bcee356b2a252a7c8fdf835146144a60abc1caf5"
 }
