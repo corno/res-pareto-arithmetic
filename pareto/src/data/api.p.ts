@@ -2,12 +2,12 @@ import * as pr from 'pareto-core-raw'
 import {
     nested,
     array,
-    typeReference, dictionary, group, member, taggedUnion, types, _function, number, parameter, template,
-} from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
+    typeReference, dictionary, group, member, taggedUnion, types, number, parameter, template, data, func,
+} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
@@ -37,7 +37,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 "Type": group({
                     "quotient": member(number()),
                     "remainder": member(number()),
-    
+
                 })
             }),
             "SubstractData": group({
@@ -49,27 +49,27 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         }),
         'interfaces': d({}),
         'functions': d({
-            "Add": _function(typeReference("NumberRange"), typeReference("common", "Number")),
-            "Multiply": _function(typeReference("NumberRange"), typeReference("common", "Number")),
-            "Negate": _function(typeReference("common", "Number"), typeReference("common", "Number")),
+            "Add": func(typeReference("NumberRange"), null, null, data(typeReference("common", "Number"), false)),
+            "Multiply": func(typeReference("NumberRange"), null, null, data(typeReference("common", "Number"), false)),
+            "Negate": func(typeReference("common", "Number"), null, null, data(typeReference("common", "Number"), false)),
             /**
             * if the denominator is 0, the return value is null
             * (division by 0)
             */
-            "DivideWithRemainder": _function(typeReference("DivisionData"), typeReference("DivisionResult")),
+            "DivideWithRemainder": func(typeReference("DivisionData"), null, null, data(typeReference("DivisionResult"), false)),
             /**
              * calculates the max of an array of numbers. If there are no entries, the result value is 0
              */
-            "ArrayMaxOrZero": _function(typeReference("NumberArray"), typeReference("common", "Number")),
+            "ArrayMaxOrZero": func(typeReference("NumberArray"), null, null, data(typeReference("common", "Number"), false)),
             /**
              * calculates the max of a dictionary of number. If there are no entries, the result value is 0
              */
-            "DictionaryMaxOrZero": _function(typeReference("NumberDictionary"), typeReference("common", "Number")),
+            "DictionaryMaxOrZero": func(typeReference("NumberDictionary"), null, null, data(typeReference("common", "Number"), false)),
             /**
             * calculates the max of a range. If there are no entries, the result value is 0
             */
-            "MaxOrZero": _function(typeReference("NumberRange"), typeReference("common", "Number")),
-            "Substract": _function(typeReference("SubstractData"), typeReference("common", "Number")),
+            "MaxOrZero": func(typeReference("NumberRange"), null, null, data(typeReference("common", "Number"), false)),
+            "Substract": func(typeReference("SubstractData"), null, null, data(typeReference("common", "Number"), false)),
         }),
     },
     'api': {
