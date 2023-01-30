@@ -13,20 +13,16 @@ export const $: mproject.TProject = {
     'description': "a pareto wrapper for arithmetic operations as pareto lacks them",
     'license': "ISC",
 
-    'type': ['resource',  {
-        'devDependencies': d({}),
-    }],
-    'modules': d({
-        "main": {
-            'definition': api,
-
-        },
-    }),
-    'main': "main",
     'pubdependencies': d({
         "glo-pareto-common": {},
     }),
-    'testdependencies': d({
-        "res-pareto-boolean": {},
-    }),
+    'type': ['resource', {
+        'definition': api,
+        'devDependencies': d({}),
+        'test': {
+            'dependencies': d({
+                "res-pareto-boolean": {},
+            }),
+        }
+    }],
 }
