@@ -7,8 +7,6 @@ const d = pr.wrapRawDictionary
 import { $ as api } from "./api.p"
 
 export const $: mproject.TProject = {
-    'name': "res-pareto-arithmetic",
-
     'author': "Corno",
     'description': "a pareto wrapper for arithmetic operations as pareto lacks them",
     'license': "ISC",
