@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "res-pareto-boolean": "^0.14.0",
+    "res-pareto-boolean": "^0.15.0",
     "lib-pareto-test": "^0.26.0",
     "pareto-core-exe": "^0.15.1",
     "pareto-core-lib": "^0.18.0",
