@@ -2,7 +2,6 @@
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper for arithmetic operations as pareto lacks them",
-
   "dependencies": {
     "glo-pareto-common": "^0.12.0",
     "pareto-core-internals": "^0.11.1"
@@ -11,8 +10,12 @@
     "dist"
   ],
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "http://github.com/corno/res-pareto-arithmetic.git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "name": "res-pareto-arithmetic",
+  "version": "0.13.0",
+  "content-fingerprint": "ee80678b33ddd108d59a33e16cce88bcc6d09ea6"
 }
