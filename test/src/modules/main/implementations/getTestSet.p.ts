@@ -13,7 +13,7 @@ import * as bool from "res-pareto-boolean"
 
 export const $$: api.CgetTestSet = () => {
 
-    const builder = ps.createUnsafeDictionaryBuilder<mtest.TTestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
     function createTest(name: string, actual: number, expected: number) {
         builder.add(name, {
             type: ['test', {
