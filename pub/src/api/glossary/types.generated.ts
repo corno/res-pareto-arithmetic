@@ -2,50 +2,70 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
-export namespace VOptional {
+export namespace T {
     
-    export namespace Onot__set {}
-    export type Onot__set<AType> = {}
-}
-export type VOptional<AType> = 
-    | ['not set', VOptional.Onot__set<AType>]
-    | ['set', AType]
-
-export type MOptional<AType> = VOptional<AType>
-
-export namespace GDivisionData {}
-export type GDivisionData = {
-    readonly 'denominator': number
-    readonly 'numerator': number
-}
-export type UDivisionData = GDivisionData
-
-export namespace GDivisionResult {
+    export namespace DivisionData {
+        
+        export type denominator = number
+        
+        export type numerator = number
+    }
     
-    export namespace TPType {}
-    export type TPType = {
+    export type DivisionData = {
+        readonly 'denominator': number
+        readonly 'numerator': number
+    }
+    
+    export namespace DivisionResult {
+        
+        export namespace O {
+            
+            export type quotient = number
+            
+            export type remainder = number
+        }
+        
+        export type O = {
+            readonly 'quotient': number
+            readonly 'remainder': number
+        }
+    }
+    
+    export type DivisionResult = [ false ] | [ true, {
         readonly 'quotient': number
         readonly 'remainder': number
+    }]
+    
+    export namespace NumberArray {
+        
+        export type A = number
+    }
+    
+    export type NumberArray = pt.Array<number>
+    
+    export namespace NumberDictionary {
+        
+        export type D = number
+    }
+    
+    export type NumberDictionary = pt.Dictionary<number>
+    
+    export namespace NumberRange {
+        
+        export type N = number
+    }
+    
+    export type NumberRange = pt.Nested<number>
+    
+    export namespace SubstractData {
+        
+        export type minuend = number
+        
+        export type subtrahend = number
+    }
+    
+    export type SubstractData = {
+        readonly 'minuend': number
+        readonly 'subtrahend': number
     }
 }
-export type GDivisionResult = MOptional<GDivisionResult.TPType>
-export type UDivisionResult = GDivisionResult
-
-export namespace GNumberArray {}
-export type GNumberArray = pt.Array<number>
-export type UNumberArray = GNumberArray
-
-export namespace GNumberDictionary {}
-export type GNumberDictionary = pt.Dictionary<number>
-export type UNumberDictionary = GNumberDictionary
-
-export namespace GNumberRange {}
-export type GNumberRange = pt.Nested<number>
-export type UNumberRange = GNumberRange
-
-export namespace GSubstractData {}
-export type GSubstractData = {
-    readonly 'minuend': number
-    readonly 'subtrahend': number
-}
-export type USubstractData = GSubstractData

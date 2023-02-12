@@ -2,7 +2,7 @@ import * as pr from 'pareto-core-raw'
 import {
     nested,
     array,
-    typeReference, dictionary, group, member, taggedUnion, types, number, parameter, template, data, func,
+    typeReference, dictionary, group, member, taggedUnion, types, number, data, func, type, optional,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
@@ -11,41 +11,29 @@ import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodule
 
 const d = pr.wrapRawDictionary
 
-export const $: mmoduleDefinition.TModuleDefinition = {
+export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': {
         'imports': d({
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({
-            "Optional": {
-                'parameters': d({ "Type": {}, }),
-                'type': taggedUnion({
-                    "set": parameter("Type"),
-                    "not set": group({}),
-                })
-            }
-        }),
-        'types': types({
-            "NumberRange": nested(number()),
-            "DivisionData": group({
+        'types': d({
+            "NumberRange": type(nested(number())),
+            "DivisionData": type(group({
                 "numerator": member(number()),
                 "denominator": member(number()),
+            })),
+            "DivisionResult": type(optional(group({
+                "quotient": member(number()),
+                "remainder": member(number()),
 
-            }),
-            "DivisionResult": template("Optional", {
-                "Type": group({
-                    "quotient": member(number()),
-                    "remainder": member(number()),
-
-                })
-            }),
-            "SubstractData": group({
+            }))),
+            "SubstractData": type(group({
                 "minuend": member(number()),
                 "subtrahend": member(number()),
-            }),
-            "NumberDictionary": dictionary(number()),
-            "NumberArray": array(number()),
+            })),
+            "NumberDictionary": type(dictionary(number())),
+            "NumberArray": type(array(number())),
         }),
         'interfaces': d({}),
         'functions': d({
