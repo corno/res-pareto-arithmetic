@@ -4,8 +4,8 @@
   "description": "a pareto wrapper for arithmetic operations as pareto lacks them",
 
   "dependencies": {
-    "glo-pareto-common": "^0.12.0",
-    "pareto-core-internals": "^0.11.1"
+    "glo-pareto-common": "^0.0.0",
+    "pareto-core-internals": "^0.0.0"
   },
   "files": [
     "dist"
