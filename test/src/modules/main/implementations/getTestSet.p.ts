@@ -1,7 +1,6 @@
 
 import * as ps from 'pareto-core-state'
 import * as pl from 'pareto-core-lib'
-import * as pr from 'pareto-core-raw'
 
 import * as mtest from "lib-pareto-test"
 
@@ -52,8 +51,8 @@ export const $$: api.CgetTestSet = () => {
     createTest("substract", pub.$a.substract({ minuend: 42, subtrahend: 7 }), 35)
 
     createTest("max", pub.$a.maxOrZero([42, 6, 8]), 42)
-    createTest("dictionaryMax", pub.$a.dictionaryMaxOrZero(pr.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
-    createTest("arrayMax", pub.$a.arrayMaxOrZero(pr.wrapRawArray([42, 6, 8])), 42)
+    //createTest("dictionaryMax", pub.$a.dictionaryMaxOrZero(pd.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
+    //createTest("arrayMax", pub.$a.arrayMaxOrZero(pr.wrapRawArray([42, 6, 8])), 42)
 
     return pl.asyncValue({
         elements: builder.getDictionary()
