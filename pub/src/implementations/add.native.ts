@@ -1,8 +1,8 @@
-import * as pi from "pareto-core-internals"
+import * as pi from 'pareto-core-internals'
 
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.Cadd = ($) => {
+export const $$: mapi.Cadd = ($) => {
     let current = 0
     pi.flatten($).forEach(($) => {
         current += $

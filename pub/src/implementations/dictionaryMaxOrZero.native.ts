@@ -1,6 +1,6 @@
-import * as api from "../api"
+import * as mapi from "../api"
 
-export const $$: api.CdictionaryMaxOrZero = ($) => {
+export const $$: mapi.CdictionaryMaxOrZero = ($) => {
     let seed = 0
     $.map(($) => {
         seed = Math.max(seed, $)
