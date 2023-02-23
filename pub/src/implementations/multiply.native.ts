@@ -1,8 +1,8 @@
 import * as pi from 'pareto-core-internals'
 
-import * as api from "../api"
+import { Cmultiply } from "../api"
 
-export const $$: api.Cmultiply = ($) => {
+export const $$:Cmultiply = ($) => {
     let current = 1
     pi.flatten($).forEach(($) => {
         current *= $

@@ -1,5 +1,5 @@
-import * as api from "../api"
+import { Cnegate } from "../api"
 
-export const $$: api.Cnegate = ($) => {
+export const $$:Cnegate = ($) => {
     return -$
 }
