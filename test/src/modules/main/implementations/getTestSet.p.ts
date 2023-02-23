@@ -8,7 +8,6 @@ import * as gtest from "lib-pareto-test"
 import * as gpub from "../../../../../pub"
 import * as gbool from "res-pareto-boolean"
 
-
 import { CgetTestSet } from "../api"
 
 export const $$:CgetTestSet = () => {
