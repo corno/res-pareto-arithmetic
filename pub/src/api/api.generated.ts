@@ -1,23 +1,23 @@
 import * as pt from 'pareto-core-types'
 
-import * as glo from "./glossary"
+import * as gglo from "./glossary"
 
 
-export type Cadd = glo.FAdd
+export type Cadd = gglo.FAdd
 
-export type CarrayMaxOrZero = glo.FArrayMaxOrZero
+export type CarrayMaxOrZero = gglo.FArrayMaxOrZero
 
-export type CdictionaryMaxOrZero = glo.FDictionaryMaxOrZero
+export type CdictionaryMaxOrZero = gglo.FDictionaryMaxOrZero
 
-export type CdivideWithRemainder = glo.FDivideWithRemainder
+export type CdivideWithRemainder = gglo.FDivideWithRemainder
 
-export type CmaxOrZero = glo.FMaxOrZero
+export type CmaxOrZero = gglo.FMaxOrZero
 
-export type Cmultiply = glo.FMultiply
+export type Cmultiply = gglo.FMultiply
 
-export type Cnegate = glo.FNegate
+export type Cnegate = gglo.FNegate
 
-export type Csubstract = glo.FSubstract
+export type Csubstract = gglo.FSubstract
 
 export type API = {
     add: Cadd
