@@ -1,4 +1,4 @@
-import { CarrayMaxOrZero } from "../api"
+import { CarrayMaxOrZero } from "../definition/api.generated"
 
 export const $$:CarrayMaxOrZero = ($) => {
     let seed = 0

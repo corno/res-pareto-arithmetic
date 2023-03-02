@@ -1,6 +1,6 @@
 import * as pi from 'pareto-core-internals'
 
-import { CmaxOrZero } from "../api"
+import { CmaxOrZero } from "../definition/api.generated"
 
 export const $$:CmaxOrZero = ($) => {
     let seed = 0

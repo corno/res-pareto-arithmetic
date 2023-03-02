@@ -1,4 +1,4 @@
-import { CdivideWithRemainder } from "../api"
+import { CdivideWithRemainder } from "../definition/api.generated"
 
 export const $$:CdivideWithRemainder = ($) => {
     if ($.denominator === 0) {

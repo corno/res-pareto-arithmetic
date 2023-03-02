@@ -1,6 +1,6 @@
 import * as pi from 'pareto-core-internals'
 
-import { Cmultiply } from "../api"
+import { Cmultiply } from "../definition/api.generated"
 
 export const $$:Cmultiply = ($) => {
     let current = 1

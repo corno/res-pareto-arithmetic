@@ -2,7 +2,7 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { Cadd } from "../api"
+import { Cadd } from "../definition/api.generated"
 
 export const $$:Cadd = ($) => {
     let current = 0

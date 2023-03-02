@@ -1,4 +1,4 @@
-import { API } from "./api"
+import { API } from "./definition/api.generated"
 import { $$ as iadd } from "./implementations/add.native"
 import { $$ as iarrayMaxOrZero } from "./implementations/arrayMaxOrZero.native"
 import { $$ as idictionaryMaxOrZero } from "./implementations/dictionaryMaxOrZero.native"
