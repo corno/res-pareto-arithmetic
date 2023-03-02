@@ -8,7 +8,7 @@ import { $$ as imultiply } from "./implementations/multiply.native"
 import { $$ as inegate } from "./implementations/negate.native"
 import { $$ as isubstract } from "./implementations/substract.native"
 
-export const $a: API = {
+export const $r: API = {
     'add': iadd,
     'arrayMaxOrZero': iarrayMaxOrZero,
     'dictionaryMaxOrZero': idictionaryMaxOrZero,
