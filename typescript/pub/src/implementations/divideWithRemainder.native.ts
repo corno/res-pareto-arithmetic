@@ -1,6 +1,6 @@
-import { CdivideWithRemainder } from "../definition/api.generated"
+import { divideWithRemainder } from "../definition/api.generated"
 
-export const $$:CdivideWithRemainder = ($) => {
+export const $$: divideWithRemainder = ($) => {
     if ($.denominator === 0) {
         return [false]
     }

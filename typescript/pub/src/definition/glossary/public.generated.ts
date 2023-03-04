@@ -1,21 +1,28 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
-export type FAdd = ($: T.NumberRange,) => gcommon.T.Number
+export namespace I {}
 
-export type FArrayMaxOrZero = ($: T.NumberArray,) => gcommon.T.Number
+export namespace B {}
 
-export type FDictionaryMaxOrZero = ($: T.NumberDictionary,) => gcommon.T.Number
-
-export type FDivideWithRemainder = ($: T.DivisionData,) => T.DivisionResult
-
-export type FMaxOrZero = ($: T.NumberRange,) => gcommon.T.Number
-
-export type FMultiply = ($: T.NumberRange,) => gcommon.T.Number
-
-export type FNegate = ($: gcommon.T.Number,) => gcommon.T.Number
-
-export type FSubstract = ($: T.SubstractData,) => gcommon.T.Number
+export namespace F {
+    
+    export type Add = ($: T.NumberRange,) => g_common.T.Number
+    
+    export type ArrayMaxOrZero = ($: T.NumberArray,) => g_common.T.Number
+    
+    export type DictionaryMaxOrZero = ($: T.NumberDictionary,) => g_common.T.Number
+    
+    export type DivideWithRemainder = ($: T.DivisionData,) => T.DivisionResult
+    
+    export type MaxOrZero = ($: T.NumberRange,) => g_common.T.Number
+    
+    export type Multiply = ($: T.NumberRange,) => g_common.T.Number
+    
+    export type Negate = ($: g_common.T.Number,) => g_common.T.Number
+    
+    export type Substract = ($: T.SubstractData,) => g_common.T.Number
+}

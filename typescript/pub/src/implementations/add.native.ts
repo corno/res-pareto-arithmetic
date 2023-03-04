@@ -2,9 +2,9 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { Cadd } from "../definition/api.generated"
+import { add } from "../definition/api.generated"
 
-export const $$:Cadd = ($) => {
+export const $$: add = ($) => {
     let current = 0
     pi.flatten($).forEach(($) => {
         current += $

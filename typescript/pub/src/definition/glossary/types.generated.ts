@@ -1,6 +1,6 @@
 import * as pt from 'pareto-core-types'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
 export namespace T {
     
@@ -38,7 +38,7 @@ export namespace T {
     
     export namespace NumberArray {
         
-        export type A = number
+        export type T = number
     }
     
     export type NumberArray = pt.Array<number>

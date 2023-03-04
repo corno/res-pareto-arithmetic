@@ -1,5 +1,5 @@
-import { Csubstract } from "../definition/api.generated"
+import { substract } from "../definition/api.generated"
 
-export const $$:Csubstract = ($) => {
+export const $$: substract = ($) => {
     return $.minuend - $.subtrahend
 }

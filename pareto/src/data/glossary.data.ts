@@ -38,6 +38,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "NumberDictionary": type(dictionary(number())),
         "NumberArray": type(array(number())),
     }),
+    'builders': d({}),
     'interfaces': d({}),
     'functions': d({
         "Add": func(typeReference("NumberRange"), null, null, data(typeReference("common", "Number"), false)),

@@ -1,8 +1,8 @@
 import * as pi from 'pareto-core-internals'
 
-import { CmaxOrZero } from "../definition/api.generated"
+import { maxOrZero } from "../definition/api.generated"
 
-export const $$:CmaxOrZero = ($) => {
+export const $$: maxOrZero = ($) => {
     let seed = 0
     pi.flatten($).forEach(($) => {
         seed = Math.max(seed, $)

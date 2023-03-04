@@ -1,5 +1,5 @@
-import { Cnegate } from "../definition/api.generated"
+import { negate } from "../definition/api.generated"
 
-export const $$:Cnegate = ($) => {
+export const $$: negate = ($) => {
     return -$
 }

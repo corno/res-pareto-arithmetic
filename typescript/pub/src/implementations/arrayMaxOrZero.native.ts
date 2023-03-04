@@ -1,6 +1,6 @@
-import { CarrayMaxOrZero } from "../definition/api.generated"
+import { arrayMaxOrZero } from "../definition/api.generated"
 
-export const $$:CarrayMaxOrZero = ($) => {
+export const $$: arrayMaxOrZero = ($) => {
     let seed = 0
     $.__forEach(($) => {
         seed = Math.max(seed, $)
