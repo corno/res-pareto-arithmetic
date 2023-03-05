@@ -15,5 +15,5 @@ export const $: gapi.T.API<pd.SourceLocation> = {
         "multiply": algorithm(functionReference("this", {}, "Multiply")),
         "negate": algorithm(functionReference("this", {}, "Negate")),
         "substract": algorithm(functionReference("this", {}, "Substract")),
-    })
+    }),
 }

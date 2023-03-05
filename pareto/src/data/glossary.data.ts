@@ -46,7 +46,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "Negate": func(typeReference("common", "Number"), null, null, data(typeReference("common", "Number"), false)),
         /**
         * if the denominator is 0, the return value is null
-        * (division by 0)
+        * (division by 0),
         */
         "DivideWithRemainder": func(typeReference("DivisionData"), null, null, data(typeReference("DivisionResult"), false)),
         /**

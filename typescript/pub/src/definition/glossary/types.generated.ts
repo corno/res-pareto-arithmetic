@@ -38,7 +38,7 @@ export namespace T {
     
     export namespace NumberArray {
         
-        export type T = number
+        export type A = number
     }
     
     export type NumberArray = pt.Array<number>
