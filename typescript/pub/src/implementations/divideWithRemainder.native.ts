@@ -1,4 +1,4 @@
-import { divideWithRemainder } from "../definition/api.generated"
+import { divideWithRemainder } from "../api.generated"
 
 export const $$: divideWithRemainder = ($) => {
     if ($.denominator === 0) {

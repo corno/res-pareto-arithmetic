@@ -1,4 +1,4 @@
-import { arrayMaxOrZero } from "../definition/api.generated"
+import { arrayMaxOrZero } from "../api.generated"
 
 export const $$: arrayMaxOrZero = ($) => {
     let seed = 0

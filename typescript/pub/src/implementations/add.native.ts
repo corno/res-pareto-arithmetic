@@ -2,7 +2,7 @@ import * as pi from 'pareto-core-internals'
 
 
 
-import { add } from "../definition/api.generated"
+import { add } from "../api.generated"
 
 export const $$: add = ($) => {
     let current = 0

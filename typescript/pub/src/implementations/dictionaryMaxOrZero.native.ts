@@ -1,6 +1,6 @@
 
 
-import { dictionaryMaxOrZero } from "../definition/api.generated"
+import { dictionaryMaxOrZero } from "../api.generated"
 
 export const $$: dictionaryMaxOrZero = ($) => {
     let seed = 0

@@ -1,6 +1,6 @@
 import * as pi from 'pareto-core-internals'
 
-import { maxOrZero } from "../definition/api.generated"
+import { maxOrZero } from "../api.generated"
 
 export const $$: maxOrZero = ($) => {
     let seed = 0

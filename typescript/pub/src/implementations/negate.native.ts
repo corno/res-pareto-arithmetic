@@ -1,4 +1,4 @@
-import { negate } from "../definition/api.generated"
+import { negate } from "../api.generated"
 
 export const $$: negate = ($) => {
     return -$
