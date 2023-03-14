@@ -6,6 +6,8 @@ import * as g_common from "glo-pareto-common"
 
 export namespace B {}
 
+export namespace C {}
+
 export namespace F {
     
     export type Add = ($: T.NumberRange) => g_common.T.Number
