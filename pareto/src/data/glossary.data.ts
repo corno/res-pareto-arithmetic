@@ -45,27 +45,27 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'type': ['synchronous', {
         'builders': d({}),
         'functions': d({
-            "Add": sfunc(typeReference("NumberRange"), null, null, sdata(externalTypeReference("common", "Number"))),
-            "Multiply": sfunc(typeReference("NumberRange"), null, null, sdata(externalTypeReference("common", "Number"))),
-            "Negate": sfunc(externalTypeReference("common", "Number"), null, null, sdata(externalTypeReference("common", "Number"))),
+            "Add": sfunc(sdata(typeReference("NumberRange")), sdata(externalTypeReference("common", "Number"))),
+            "Multiply": sfunc(sdata(typeReference("NumberRange")), sdata(externalTypeReference("common", "Number"))),
+            "Negate": sfunc(sdata(externalTypeReference("common", "Number")), sdata(externalTypeReference("common", "Number"))),
             /**
             * if the denominator is 0, the return value is null
             * (division by 0),
             */
-            "DivideWithRemainder": sfunc(typeReference("DivisionData"), null, null, sdata(typeReference("DivisionResult"))),
+            "DivideWithRemainder": sfunc(sdata(typeReference("DivisionData")), sdata(typeReference("DivisionResult"))),
             /**
              * calculates the max of an array of numbers. If there are no entries, the result value is 0
              */
-            "ArrayMaxOrZero": sfunc(typeReference("NumberArray"), null, null, sdata(externalTypeReference("common", "Number"))),
+            "ArrayMaxOrZero": sfunc(sdata(typeReference("NumberArray")), sdata(externalTypeReference("common", "Number"))),
             /**
              * calculates the max of a dictionary of number. If there are no entries, the result value is 0
              */
-            "DictionaryMaxOrZero": sfunc(typeReference("NumberDictionary"), null, null, sdata(externalTypeReference("common", "Number"))),
+            "DictionaryMaxOrZero": sfunc(sdata(typeReference("NumberDictionary")), sdata(externalTypeReference("common", "Number"))),
             /**
             * calculates the max of a range. If there are no entries, the result value is 0
             */
-            "MaxOrZero": sfunc(typeReference("NumberRange"), null, null, sdata(externalTypeReference("common", "Number"))),
-            "Substract": sfunc(typeReference("SubstractData"), null, null, sdata(externalTypeReference("common", "Number"))),
+            "MaxOrZero": sfunc(sdata(typeReference("NumberRange")), sdata(externalTypeReference("common", "Number"))),
+            "Substract": sfunc(sdata(typeReference("SubstractData")), sdata(externalTypeReference("common", "Number"))),
         }),
 
     }],
