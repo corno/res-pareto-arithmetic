@@ -1,30 +1,32 @@
 import * as pt from 'pareto-core-types'
 
 import * as g_this from "./glossary"
-
-export type add = g_this.F.Add
-
-export type arrayMaxOrZero = g_this.F.ArrayMaxOrZero
-
-export type dictionaryMaxOrZero = g_this.F.DictionaryMaxOrZero
-
-export type divideWithRemainder = g_this.F.DivideWithRemainder
-
-export type maxOrZero = g_this.F.MaxOrZero
-
-export type multiply = g_this.F.Multiply
-
-export type negate = g_this.F.Negate
-
-export type substract = g_this.F.Substract
+export namespace A {
+    
+    export type add = g_this.SYNC.F.Add
+    
+    export type arrayMaxOrZero = g_this.SYNC.F.ArrayMaxOrZero
+    
+    export type dictionaryMaxOrZero = g_this.SYNC.F.DictionaryMaxOrZero
+    
+    export type divideWithRemainder = g_this.SYNC.F.DivideWithRemainder
+    
+    export type maxOrZero = g_this.SYNC.F.MaxOrZero
+    
+    export type multiply = g_this.SYNC.F.Multiply
+    
+    export type negate = g_this.SYNC.F.Negate
+    
+    export type substract = g_this.SYNC.F.Substract
+}
 
 export type API = {
-    add: add
-    arrayMaxOrZero: arrayMaxOrZero
-    dictionaryMaxOrZero: dictionaryMaxOrZero
-    divideWithRemainder: divideWithRemainder
-    maxOrZero: maxOrZero
-    multiply: multiply
-    negate: negate
-    substract: substract
+    add: A.add
+    arrayMaxOrZero: A.arrayMaxOrZero
+    dictionaryMaxOrZero: A.dictionaryMaxOrZero
+    divideWithRemainder: A.divideWithRemainder
+    maxOrZero: A.maxOrZero
+    multiply: A.multiply
+    negate: A.negate
+    substract: A.substract
 }

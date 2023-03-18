@@ -1,6 +1,6 @@
-import { divideWithRemainder } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: divideWithRemainder = ($) => {
+export const $$: A.divideWithRemainder = ($) => {
     if ($.denominator === 0) {
         return [false]
     }

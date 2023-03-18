@@ -1,8 +1,8 @@
 
 
-import { dictionaryMaxOrZero } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: dictionaryMaxOrZero = ($) => {
+export const $$: A.dictionaryMaxOrZero = ($) => {
     let seed = 0
     $.map(($) => {
         seed = Math.max(seed, $)

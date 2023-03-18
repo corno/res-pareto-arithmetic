@@ -1,5 +1,5 @@
-import { negate } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: negate = ($) => {
+export const $$: A.negate = ($) => {
     return -$
 }

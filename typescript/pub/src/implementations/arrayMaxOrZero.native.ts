@@ -1,6 +1,6 @@
-import { arrayMaxOrZero } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: arrayMaxOrZero = ($) => {
+export const $$: A.arrayMaxOrZero = ($) => {
     let seed = 0
     $.__forEach(($) => {
         seed = Math.max(seed, $)
