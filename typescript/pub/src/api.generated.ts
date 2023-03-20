@@ -22,12 +22,12 @@ export namespace A {
 }
 
 export type API = {
-    add: A.add
-    arrayMaxOrZero: A.arrayMaxOrZero
-    dictionaryMaxOrZero: A.dictionaryMaxOrZero
-    divideWithRemainder: A.divideWithRemainder
-    maxOrZero: A.maxOrZero
-    multiply: A.multiply
-    negate: A.negate
-    substract: A.substract
+    readonly 'add': A.add
+    readonly 'arrayMaxOrZero': A.arrayMaxOrZero
+    readonly 'dictionaryMaxOrZero': A.dictionaryMaxOrZero
+    readonly 'divideWithRemainder': A.divideWithRemainder
+    readonly 'maxOrZero': A.maxOrZero
+    readonly 'multiply': A.multiply
+    readonly 'negate': A.negate
+    readonly 'substract': A.substract
 }
