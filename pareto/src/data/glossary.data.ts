@@ -1,7 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    array, data, dictionary, externalTypeReference, group, imp, member, nested, number, optional, sfunc,
+    array, data, dictionary, externalTypeReference, group, imp, member, nested, number, optional, sfunction,
     type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -33,34 +33,33 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({}),
+        'algorithms': d({}),
+        
     },
     'synchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({
-            "Add": sfunc(data(typeReference("NumberRange")), externalTypeReference("common", "Number")),
-            "Multiply": sfunc(data(typeReference("NumberRange")), externalTypeReference("common", "Number")),
-            "Negate": sfunc(data(externalTypeReference("common", "Number")), externalTypeReference("common", "Number")),
+        'algorithms': d({
+            "Add": sfunction(externalTypeReference("common", "Number"), data(typeReference("NumberRange"))),
+            "Multiply": sfunction(externalTypeReference("common", "Number"), data(typeReference("NumberRange"))),
+            "Negate": sfunction(externalTypeReference("common", "Number"), data(externalTypeReference("common", "Number"))),
             /**
             * if the denominator is 0, the return value is null
             * (division by 0),
             */
-            "DivideWithRemainder": sfunc(data(typeReference("DivisionData")), typeReference("DivisionResult")),
+            "DivideWithRemainder": sfunction(typeReference("DivisionResult"), data(typeReference("DivisionData"))),
             /**
              * calculates the max of an array of numbers. If there are no entries, the result value is 0
              */
-            "ArrayMaxOrZero": sfunc(data(typeReference("NumberArray")), externalTypeReference("common", "Number")),
+            "ArrayMaxOrZero": sfunction(externalTypeReference("common", "Number"), data(typeReference("NumberArray"))),
             /**
              * calculates the max of a dictionary of number. If there are no entries, the result value is 0
              */
-            "DictionaryMaxOrZero": sfunc(data(typeReference("NumberDictionary")), externalTypeReference("common", "Number")),
+            "DictionaryMaxOrZero": sfunction(externalTypeReference("common", "Number"), data(typeReference("NumberDictionary"))),
             /**
             * calculates the max of a range. If there are no entries, the result value is 0
             */
-            "MaxOrZero": sfunc(data(typeReference("NumberRange")), externalTypeReference("common", "Number")),
-            "Substract": sfunc(data(typeReference("SubstractData")), externalTypeReference("common", "Number")),
+            "MaxOrZero": sfunction(externalTypeReference("common", "Number"), data(typeReference("NumberRange"))),
+            "Substract": sfunction(externalTypeReference("common", "Number"), data(typeReference("SubstractData"))),
         }),
     },
 }
