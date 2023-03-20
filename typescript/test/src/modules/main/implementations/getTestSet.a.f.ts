@@ -21,10 +21,10 @@ export const $$: getTestSet = () => {
         })
     }
 
-    createTest("add - empty", g_pub.$r.add([]), 0)
-    createTest("add - entries", g_pub.$r.add([4, 6, 2]), 12)
-    createTest("negative", g_pub.$r.negate(2), -2)
-    pl.cc(g_pub.$r.divideWithRemainder({ numerator: 7, denominator: 2 }), ($) => {
+    createTest("add - empty", g_pub.$r.add()([]), 0)
+    createTest("add - entries", g_pub.$r.add()([4, 6, 2]), 12)
+    createTest("negative", g_pub.$r.negate()(2), -2)
+    pl.cc(g_pub.$r.divideWithRemainder()({ numerator: 7, denominator: 2 }), ($) => {
         if ($[0] === true) {
 
             createTest("quotient", $[1].quotient, 3)
@@ -42,15 +42,15 @@ export const $$: getTestSet = () => {
 
     builder.add("unexpected division not null", {
         type: ['test', {
-            type: ['boolean', g_pub.$r.divideWithRemainder({ numerator: 7, denominator: 0 })[0] === false]
+            type: ['boolean', g_pub.$r.divideWithRemainder()({ numerator: 7, denominator: 0 })[0] === false]
         }]
     })
-    createTest("multiply - empty", g_pub.$r.multiply([]), 1)
-    createTest("multiply - entries", g_pub.$r.multiply([7, 6]), 42)
+    createTest("multiply - empty", g_pub.$r.multiply()([]), 1)
+    createTest("multiply - entries", g_pub.$r.multiply()([7, 6]), 42)
 
-    createTest("substract", g_pub.$r.substract({ minuend: 42, subtrahend: 7 }), 35)
+    createTest("substract", g_pub.$r.substract()({ minuend: 42, subtrahend: 7 }), 35)
 
-    createTest("max", g_pub.$r.maxOrZero([42, 6, 8]), 42)
+    createTest("max", g_pub.$r.maxOrZero()([42, 6, 8]), 42)
     //createTest("dictionaryMax", pub.$r.dictionaryMaxOrZero(pd.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
     //createTest("arrayMax", pub.$r.arrayMaxOrZero(pr.wrapRawArray([42, 6, 8])), 42)
 

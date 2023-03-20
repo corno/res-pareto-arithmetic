@@ -1,5 +1,7 @@
 import { A } from "../api.generated"
 
-export const $$: A.substract = ($) => {
-    return $.minuend - $.subtrahend
+export const $$: A.substract = () => {
+    return ($) => {
+        return $.minuend - $.subtrahend
+    }
 }
