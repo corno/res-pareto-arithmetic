@@ -16,7 +16,7 @@ export const $$: getTestSet = () => {
     function createTest(name: string, actual: number, expected: number) {
         builder.add(name, {
             type: ['test', {
-                type: ['boolean', g_bool.$r.equal({ this: actual, that: expected })]
+                type: ['boolean', g_bool.$r.equal()({ this: actual, that: expected })]
             }]
         })
     }
