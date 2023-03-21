@@ -7,9 +7,9 @@ import * as g_test from "lib-pareto-test"
 import * as g_pub from "../../../../../pub"
 import * as g_bool from "res-pareto-boolean"
 
-import { getTestSet } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: getTestSet = () => {
+export const $$: A.getTestSet = () => {
 
     const builder = ps.createUnsafeDictionaryBuilder<g_test.T.TestElement>()
     function createTest(name: string, actual: number, expected: number) {
