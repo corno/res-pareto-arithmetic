@@ -13,28 +13,31 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'imports': d({
         "common": imp({}),
     }),
-    'types': d({
-        "NumberRange": type(nested(number())),
-        "DivisionData": type(group({
-            "numerator": member(number()),
-            "denominator": member(number()),
-        })),
-        "DivisionResult": type(optional(group({
-            "quotient": member(number()),
-            "remainder": member(number()),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "NumberRange": type(nested(number())),
+            "DivisionData": type(group({
+                "numerator": member(number()),
+                "denominator": member(number()),
+            })),
+            "DivisionResult": type(optional(group({
+                "quotient": member(number()),
+                "remainder": member(number()),
 
-        }))),
-        "SubstractData": type(group({
-            "minuend": member(number()),
-            "subtrahend": member(number()),
-        })),
-        "NumberDictionary": type(dictionary(number())),
-        "NumberArray": type(array(number())),
-    }),
+            }))),
+            "SubstractData": type(group({
+                "minuend": member(number()),
+                "subtrahend": member(number()),
+            })),
+            "NumberDictionary": type(dictionary(number())),
+            "NumberArray": type(array(number())),
+        }),
+    },
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
-        
+
     },
     'synchronous': {
         'interfaces': d({}),
