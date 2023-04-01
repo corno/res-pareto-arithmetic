@@ -38,6 +38,15 @@ export namespace T {
         readonly 'remainder': number
     }]
     
+    export namespace IncrementConfig {
+        
+        export type stepsize = number
+    }
+    
+    export type IncrementConfig = {
+        readonly 'stepsize': number
+    }
+    
     export namespace NumberArray {
         
         export type A = number

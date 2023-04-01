@@ -11,6 +11,7 @@ export namespace D {
     
     
     
+    
 }
 
 export namespace A {
@@ -22,6 +23,8 @@ export namespace A {
     export type dictionaryMaxOrZero = () => g_this.SYNC.A.F.DictionaryMaxOrZero
     
     export type divideWithRemainder = () => g_this.SYNC.A.F.DivideWithRemainder
+    
+    export type increment = ($: g_this.T.IncrementConfig, ) => g_this.SYNC.A.F.Increment
     
     export type maxOrZero = () => g_this.SYNC.A.F.MaxOrZero
     
@@ -37,6 +40,7 @@ export type API = {
     readonly 'arrayMaxOrZero': A.arrayMaxOrZero
     readonly 'dictionaryMaxOrZero': A.dictionaryMaxOrZero
     readonly 'divideWithRemainder': A.divideWithRemainder
+    readonly 'increment': A.increment
     readonly 'maxOrZero': A.maxOrZero
     readonly 'multiply': A.multiply
     readonly 'negate': A.negate

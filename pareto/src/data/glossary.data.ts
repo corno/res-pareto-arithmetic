@@ -32,6 +32,9 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             })),
             "NumberDictionary": type(dictionary(number())),
             "NumberArray": type(array(number())),
+            "IncrementConfig": type(group({
+                "stepsize": member(number())
+            }))
         }),
     },
     'asynchronous': {
@@ -42,6 +45,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'synchronous': {
         'interfaces': d({}),
         'algorithms': d({
+            "Increment": sfunction(externalTypeReference("common", "Number"), data(externalTypeReference("common", "Number"))),
             "Add": sfunction(externalTypeReference("common", "Number"), data(typeReference("NumberRange"))),
             "Multiply": sfunction(externalTypeReference("common", "Number"), data(typeReference("NumberRange"))),
             "Negate": sfunction(externalTypeReference("common", "Number"), data(externalTypeReference("common", "Number"))),

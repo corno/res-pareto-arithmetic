@@ -37,6 +37,11 @@ export namespace SYNC {
         
         
         export namespace F {
+            export type Increment = ($: g_common.T.Number) => g_common.T.Number
+        }
+        
+        
+        export namespace F {
             export type MaxOrZero = ($: T.NumberRange) => g_common.T.Number
         }
         
