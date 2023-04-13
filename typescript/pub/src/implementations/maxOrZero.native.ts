@@ -5,7 +5,7 @@ import { A } from "../api.generated"
 export const $$: A.maxOrZero = () => {
     return ($) => {
         let seed = 0
-        pi.flatten($).forEach(($) => {
+        $.__forEach(($) => {
             seed = Math.max(seed, $)
         })
         return seed

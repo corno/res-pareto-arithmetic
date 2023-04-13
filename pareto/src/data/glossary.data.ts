@@ -1,7 +1,7 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    array, data, dictionary, externalTypeReference, group, imp, member, nested, number, optional, sfunction,
+    array, data, dictionary, externalTypeReference, group, imp, member, number, optional, sfunction,
     type, typeReference
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
@@ -16,7 +16,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'root': {
         'namespaces': d({}),
         'types': d({
-            "NumberRange": type(nested(number())),
+            "NumberRange": type(array(number())),
             "DivisionData": type(group({
                 "numerator": member(number()),
                 "denominator": member(number()),

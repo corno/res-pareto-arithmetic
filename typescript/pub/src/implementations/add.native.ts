@@ -7,7 +7,7 @@ import { A } from "../api.generated"
 export const $$: A.add = () => {
     return ($) => {
         let current = 0
-        pi.flatten($).forEach(($) => {
+        $.__forEach(($) => {
             current += $
         })
         return current

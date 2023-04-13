@@ -63,10 +63,10 @@ export namespace T {
     
     export namespace NumberRange {
         
-        export type N = number
+        export type A = number
     }
     
-    export type NumberRange = pt.Nested<number>
+    export type NumberRange = pt.Array<number>
     
     export namespace SubstractData {
         
