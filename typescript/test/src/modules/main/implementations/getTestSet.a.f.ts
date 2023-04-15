@@ -2,12 +2,15 @@
 import * as ps from 'pareto-core-state'
 import * as pl from 'pareto-core-lib'
 import * as pa from 'pareto-core-async'
+import * as pd from 'pareto-core-data'
 
 import * as g_test from "lib-pareto-test"
 import * as g_pub from "../../../../../pub"
 import * as g_bool from "res-pareto-boolean"
 
 import { A } from "../api.generated"
+
+const a = pd.a
 
 export const $$: A.getTestSet = () => {
 
@@ -20,8 +23,8 @@ export const $$: A.getTestSet = () => {
         })
     }
 
-    createTest("add - empty", g_pub.$r.add()([]), 0)
-    createTest("add - entries", g_pub.$r.add()([4, 6, 2]), 12)
+    createTest("add - empty", g_pub.$r.add()(a([])), 0)
+    createTest("add - entries", g_pub.$r.add()(a([4, 6, 2])), 12)
     createTest("negative", g_pub.$r.negate()(2), -2)
     pl.cc(g_pub.$r.divideWithRemainder()({ numerator: 7, denominator: 2 }), ($) => {
         if ($[0] === true) {
@@ -44,12 +47,12 @@ export const $$: A.getTestSet = () => {
             type: ['boolean', g_pub.$r.divideWithRemainder()({ numerator: 7, denominator: 0 })[0] === false]
         }]
     })
-    createTest("multiply - empty", g_pub.$r.multiply()([]), 1)
-    createTest("multiply - entries", g_pub.$r.multiply()([7, 6]), 42)
+    createTest("multiply - empty", g_pub.$r.multiply()(a([])), 1)
+    createTest("multiply - entries", g_pub.$r.multiply()(a([7, 6])), 42)
 
     createTest("substract", g_pub.$r.substract()({ minuend: 42, subtrahend: 7 }), 35)
 
-    createTest("max", g_pub.$r.maxOrZero()([42, 6, 8]), 42)
+    createTest("max", g_pub.$r.maxOrZero()(a([42, 6, 8])), 42)
     //createTest("dictionaryMax", pub.$r.dictionaryMaxOrZero(pd.wrapRawDictionary({ "a": 42, "b": 6 })), 42)
     //createTest("arrayMax", pub.$r.arrayMaxOrZero(pr.wrapRawArray([42, 6, 8])), 42)
 
